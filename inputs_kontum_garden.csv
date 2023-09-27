@@ -39,7 +39,7 @@ green_space_value,100,,200,posnorm,Value of green space (million VND/year)
 reduce_polution_value,10,,20,posnorm,Value of reduced polution on school garden (million VND/year)
 school_event_value,10,,50,posnorm,Value of garden related school events (million VND/year)
 ,,,,,
-if_not_fallow,0.2,,0.5,tnorm_0_1,Chance of land being fallow (%)
+if_not_fallow,0.2,,0.5,tnorm_0_1,Chance of land not being fallow (i.e. being used for some other activity) (%)
 value_of_non_garden_land_use,200,,500,posnorm,"Value of non garden land use, work or other income genration (million VND/yr)"
 costs_of_non_garden_land_use,1,,5,posnorm,Cost of non garden land use (million VND/yr)
 value_of_fallow_non_garden_land,20,,50,posnorm,"Value of falloow garden land use, biodiversity, kids play area etc. (million VND/yr)"
