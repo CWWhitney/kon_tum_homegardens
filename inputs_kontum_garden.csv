@@ -1,0 +1,45 @@
+variable,lower ,median,upper,distribution,label
+number_of_years,5,,5,const,Number of years for garden simulation
+discount_rate,5,,8,posnorm,Discounting factor
+size_of_garden,50,,100,posnorm,Size of school garden in (m2)
+CV_value,0.1,,0.4,tnorm_0_1,Coefficient of variation for our school garden intervention (%)
+inflation_rate,5,,10,posnorm,Inflation rate (%)
+,,,,,
+if_community_likes,0.2,,0.8,tnorm_0_1,Chance of community support (%)
+if_effective_manage,0.5,,0.7,tnorm_0_1,Chance of effective garden management (%)
+if_garden_yield_enough,0.3,,0.6,tnorm_0_1,Chance of sufficient yield from garden (%)
+if_garden_healthy,0.5,,0.9,tnorm_0_1,Chance of healthy food from garden (%)
+if_effective_training,0.2,,0.8,tnorm_0_1,Chance of effective training for teachers (%)
+if_offer_green_space,0.5,,0.9,tnorm_0_1,Chance of garden having ecologically valuable green space (%)
+if_reduce_polution,0.2,,0.5,tnorm_0_1,Chance of garden reducing polution (%)
+if_biophysical_good,0.2,,0.5,tnorm_0_1,Chance of biophysical not damaging (i.e. weather) (%)
+,,,,,
+equipment_cost,50,,100,posnorm,Costs of equipment for setting up garden (million VND)
+construction_cost,15,,30,posnorm,Costs of construction for setting up garden (million VND)
+garden_designing_costs,10,,15,posnorm,Costs of design team consultant (million VND)
+compost_starting,5,,10,posnorm,Starting compost (million VND)
+worm_starting,2,,5,posnorm,Starting worms for compost (million VND)
+livestock_costs,2,,5,posnorm,Starting animals  in the garden (million VND)
+,,,,,
+maintaining_labor,25,,40,posnorm,Annual Labor cost to maintain school garden  (million VND/yr)
+seed_costs,1,,2,posnorm,seeds and seedlings (million VND/yr)
+fertilizer,1,,2,posnorm,i.e. EM to add to compost (million VND/yr)
+plant_protection,2,,5,posnorm,IPM for pest and disease (million VND/yr)
+,,,,,
+child_veg_access,5,,10,posnorm,Value of children having more access to safe vegetables (million VND/year)
+child_healthier_choices,100,,500,posnorm,Value of children making better choices about food (million VND/year)
+women_veg_access,5,,10,posnorm,Value of women having more access to safe vegetables (million VND/year)
+women_healthier_choices,100,,500,posnorm,Value of women making better choices about food (million VND/year)
+elderly_veg_access,5,,10,posnorm,Value of elderly having more access to safe vegetables (million VND/year)
+elderly_healthier_choices,100,,500,posnorm,Value of elderly making better choices about food (million VND/year)
+others_veg_access,5,,10,posnorm,Value of other household members having more access to safe vegetables (million VND/year)
+others_healthier_choices,100,,500,posnorm,Value of other household members making better choices about food (million VND/year)
+,,,,,
+green_space_value,100,,200,posnorm,Value of green space (million VND/year)
+reduce_polution_value,10,,20,posnorm,Value of reduced polution on school garden (million VND/year)
+school_event_value,10,,50,posnorm,Value of garden related school events (million VND/year)
+,,,,,
+if_not_fallow,0.2,,0.5,tnorm_0_1,Chance of land being fallow (%)
+value_of_non_garden_land_use,200,,500,posnorm,"Value of non garden land use, work or other income genration (million VND/yr)"
+costs_of_non_garden_land_use,1,,5,posnorm,Cost of non garden land use (million VND/yr)
+value_of_fallow_non_garden_land,20,,50,posnorm,"Value of falloow garden land use, biodiversity, kids play area etc. (million VND/yr)"
