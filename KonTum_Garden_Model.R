@@ -28,18 +28,16 @@ kontum_garden_function <- function(x, varnames){
 
   # Could be subject to cut-off values based on land area and number of students
   garden_establishment_costs <- compost_starting + # getting started with the compost
-    garden_designing_costs + # garden design costs (hiring a planner) 
-    equipment_cost + # this is a high value because we may need a lot of equipment, netting, trellis for plants to climb
-    # could be a smart system (full automation)... 
+    garden_designing_costs + # garden design costs 
+    equipment_cost + # this is a high value because we may need a lot of support
     construction_cost  
 
   establishment_cost_year_one <- garden_establishment_costs 
   
-  garden_maintenance_cost <- maintaining_labor + # technical staff etc
-            # 2-3 hours per day to manage a garden of this rough size
+  garden_maintenance_cost <- maintaining_labor + # labor
     seed_costs + # seeds and seedlings each year
-    fertilizer + # EM and other helpers for compost
-    plant_protection  # IPM for plant protection
+    fertilizer + # depending on soil quality
+    plant_protection  # depending on pest and weed pressure
     
   maintenance_cost_annual <- garden_maintenance_cost
   
@@ -60,7 +58,7 @@ kontum_garden_function <- function(x, varnames){
   # used to multiply benefits (by a number 90% likely)
   
   garden_function_risk <-  min(if_biophysical_good, 
-                               if_community_likes, #damage garden
+                               if_community_likes, # damage garden
                                if_effective_manage) # well managed garden
   
   garden_nutrition_risk <- min(if_garden_yield_enough, # goes to the meal
@@ -125,6 +123,7 @@ kontum_garden_function <- function(x, varnames){
   
   total_benefit_no <- non_garden_value 
   
+  # baseline costs for comparison (rough estimate)
   total_cost_no <- vv(costs_of_non_garden_land_use, 
                          var_CV = CV_value, 
                          n = number_of_years, 

@@ -5,12 +5,35 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 ```
 
-Here we model an intervention to address malnutrition among ethnic minority groups in Kon Tum, Vietnam. The model follows observations and discussions and some follow up work by partners of the NIFAM (Nutrition Intervention Forecasting and Monitoring) project in 2022 and 2023. A test run of the intervention will be carried out by the Social Policy Ecology research Institute (SPERI) in Kon Tum with smallholder farmers of the Ca Dong ethnic minority group.
+Here we model an intervention to address malnutrition among ethnic minority groups in Kon Tum, Vietnam. The model follows observations and discussions and some follow up work by partners of the NIFAM (Nutrition Intervention Forecasting and Monitoring) project in 2022 and 2023. The model focuses on the traditional diets of the Ca Dong people of Kon Tum, Vietnam. 
+
+The food environments of the Ca Dong people have changed dramatically since they were resettled from ancestral lands for the construction of the Dak Drinh hydropower reservoir in 2013. Food environments have shifted from traditional hunting, wild harvesting, and swidden agriculture, to low-income commodity production, leading to a decline in forests and the loss of traditional food plants and animals. Through transdisciplinary approaches, we engaged eight groups of stakeholders including local party leaders and forest-dependent communities to explore options for supporting diverse and sustainable food environments. 
+We applied participatory exploration of forest food availability and diversity. We model the potential of reforested areas to restore traditional food environment practices.
+
+We assess policy-level land-use planning to understand the transitions from forests to farmlands and their implications for food environments and forest ecology. 
+
+![](figures/kuznet.png)
+
+**Environmental Kuznets Curve and Food Environments**
+
+Locally, food environments and forest cover follow an environmental Kuznets curve. The conversion of diverse forests to monoculture commodity production has resulted in a loss of ecological resources as well as traditional ecological knowledge and customarily governed forest harvests, affecting food choices and livelihoods. The future of these complex forest systems is unclear. The intertwined issues of forests, food environments, poverty, cultural preservation, and sustainable resource protection highlight the complex challenges faced by indigenous communities undergoing resettlement and changes in their food systems. 
+
+Together we set out to identify and model possible solutions, including agroforestry interventions in productive zones. Homegarden agroforestry options could be practicable. These gardens could include plants and animal diversity and lead to better nutrition for households and communities. They could also preserve the traditional diets and customs of people who have been displaced or no longer have access to the forest. 
+
+![](figures/garden_model.png)
+**Homegarden agroforestry options as an intervention to improve food environments in Kon Tum, Vietnam**
+
+Our work aims to offer potentail ways of addressing these challenges. We set out to develop evidence-based solutions that balance economic development with ecological and cultural sustainability. By collaborating with local stakeholders and incorporating local ecological knowledge. We aim to support interventions for sustainable diets, biodiversity conservation, and livelihood security in the changing landscapes of Vietnam's highlands. 
+
+We identified and described forest foods in community meetings, through observations and forest walks. The iNaturalist app was also used locally and taught to local people so that they could add to the list of edible forest species. 
+
+A test run of the intervention was meant to be carried out by the Social Policy Ecology research Institute (SPERI) in Kon Tum with smallholder farmers of the Ca Dong ethnic minority group. The next phase of the work would have been to test selected species for nutrition and field sites for the potential of growing in homegardens. However, there was a local uprising of indigenous people nit far from our project location. Several people were shot and killed including local political leaders and local ethnic minority people. We were unable to continue our work and instead report on what we learned in this short communication. 
 
 ![](figures/outline.png)
-
+**Conceptual model of homegardens and cooking classes as an intervention to improve food environments in Kon Tum, Vietnam**
 
 # Kon Tum garden and cooking class simulation
 
@@ -34,7 +57,7 @@ garden_simulation_results <- mcSimulation(
 )
 ```
 
-The way we present NPV values can influence decision makers. The same information presented in different ways can even lead to different decisions. Here we derive a plot that compares the decision options as pure NPV values.
+Here we present the value for the interventions as a Net Present Value (NPV). However, to be a realistic alternative, these interventions need to provide equivalent income to cassava planting (roughly 20 million VND per ha/yr). We have added a line to the plot to represent this cut off. 
 
 ```{r}
 source("functions/plot_distributions.R")
@@ -42,29 +65,25 @@ plot_distributions(mcSimulation_object = garden_simulation_results,
                                     vars = c("NPV_garden", "NPV_no_garden"),
                                     method = 'hist_simple_overlay', 
                                     base_size = 7, 
-                                    x_axis_name = "Comparative NPV outcomes")
+                                    x_axis_name = "Comparative NPV outcomes") + geom_vline(xintercept = 90)
 ```
 
-## Framing the outcomes
+## Net Present Value
 
-Under Prospect Theory the way we present NPV values can influence decision makers - the same information presented in different ways can lead to different decisions. For example, framing a projected NPV gain as a "reduction in potential loss" might make it more attractive to decision makers due to loss aversion.
-
-Here we plot the distribution for the decision and frame the projected NPV gain for the 'decision' (distributions for the two options with the NPV values of the `no garden` option subtracted from those for the `garden`). If we display this as a "Reduction in potential loss" it might be more attractive to decision makers due to loss aversion, i.e. the party might put more emphasis on avoiding potential losses than on seeking gains. We can frame our results as a strategy that minimizes losses rather than one that maximizes gains.
+We plot the distribution for the decision and frame the projected NPV gain for the 'decision' (distributions for the two options with the NPV values of the `no garden` option subtracted from those for the `garden`). 
 
 ```{r framing_NPV_results}
 plot_distributions(mcSimulation_object = garden_simulation_results, 
                                     vars = "decision",
                                     method = 'hist_simple_overlay', 
                                     base_size = 7,  
-                                    x_axis_name = "Reduction in potential loss")
+                                    x_axis_name = "Relative gain compared to no garden") + geom_vline(xintercept = 90)
 
 ```
 
 ## Summary of results for the decision
 
-## Summary
-
-Use gt_plt_summary() from {gtExtras}
+We use `gt_plt_summary()` from {gtExtras} to plot the results for all the outputs of our simulation. 
 
 ```{r gtExtras_summary}
 library(gtExtras)
@@ -88,7 +107,7 @@ Summary of costs
 summary(garden_simulation_results$y$total_costs)
 ```
 
-# First year
+# Summary of the first year of investment
 
 ```{r summary_first_year_costs}
 summary(garden_simulation_results$y$Cashflow_garden1)
