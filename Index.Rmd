@@ -19,14 +19,14 @@ We assess policy-level land-use planning to understand the transitions from fore
 
 **Environmental Kuznets Curve and Food Environments**
 
-The model follows an environmental Kuznets curve - conversion of diverse forests to monoculture commodity production has resulted in a loss of ecological resources as well as traditional ecological knowledge and customarily governed forest harvests, affecting food choices and livelihoods - the future of these complex forest systems is unclear. The intertwined issues of forests, food environments, poverty, cultural preservation, and sustainable resource protection highlight the complex challenges faced by indigenous communities undergoing resettlement and changes in their food systems. 
+Locally, food environments and forest cover follow an environmental Kuznets curve. The conversion of diverse forests to monoculture commodity production has resulted in a loss of ecological resources as well as traditional ecological knowledge and customarily governed forest harvests, affecting food choices and livelihoods. The future of these complex forest systems is unclear. The intertwined issues of forests, food environments, poverty, cultural preservation, and sustainable resource protection highlight the complex challenges faced by indigenous communities undergoing resettlement and changes in their food systems. 
 
-Together we set out to identify and model possible solutions, including agroforestry interventions in productive zones. Homegarden agroforestry options could be practicable. These gardens could include plants and animal diversity and lead to better nutrition for households and communities. They could also preserve the traditional diets and customs of people who have been displaced or no tlonger have access to the forest. 
+Together we set out to identify and model possible solutions, including agroforestry interventions in productive zones. Homegarden agroforestry options could be practicable. These gardens could include plants and animal diversity and lead to better nutrition for households and communities. They could also preserve the traditional diets and customs of people who have been displaced or no longer have access to the forest. 
 
 ![](figures/garden_model.png)
 **Homegarden agroforestry options as an intervention to improve food environments in Kon Tum, Vietnam**
 
-Our work aims to contribute to the understanding of these challenges and develop evidence-based solutions that balance economic development with ecological and cultural sustainability. By collaborating with local stakeholders and incorporating local ecological knowledge. We aim to support interventions for sustainable diets, biodiversity conservation, and livelihood security in the changing landscapes of Vietnam's highlands. 
+Our work aims to offer potentail ways of addressing these challenges. We set out to develop evidence-based solutions that balance economic development with ecological and cultural sustainability. By collaborating with local stakeholders and incorporating local ecological knowledge. We aim to support interventions for sustainable diets, biodiversity conservation, and livelihood security in the changing landscapes of Vietnam's highlands. 
 
 We identified and described forest foods in community meetings, through observations and forest walks. The iNaturalist app was also used locally and taught to local people so that they could add to the list of edible forest species. 
 
@@ -68,9 +68,7 @@ plot_distributions(mcSimulation_object = garden_simulation_results,
                                     x_axis_name = "Comparative NPV outcomes") + geom_vline(xintercept = 90)
 ```
 
-
-
-## Framing the outcomes
+## Net Present Value
 
 We plot the distribution for the decision and frame the projected NPV gain for the 'decision' (distributions for the two options with the NPV values of the `no garden` option subtracted from those for the `garden`). 
 
@@ -85,9 +83,7 @@ plot_distributions(mcSimulation_object = garden_simulation_results,
 
 ## Summary of results for the decision
 
-## Summary
-
-Use gt_plt_summary() from {gtExtras}
+We use `gt_plt_summary()` from {gtExtras} to plot the results for all the outputs of our simulation. 
 
 ```{r gtExtras_summary}
 library(gtExtras)
