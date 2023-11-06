@@ -125,6 +125,7 @@ kontum_garden_function <- function(x, varnames){
   
   total_benefit_no <- non_garden_value 
   
+  # baseline costs for comparison (rough estimate)
   total_cost_no <- vv(costs_of_non_garden_land_use, 
                          var_CV = CV_value, 
                          n = number_of_years, 
