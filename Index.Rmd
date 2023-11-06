@@ -7,10 +7,34 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Here we model an intervention to address malnutrition among ethnic minority groups in Kon Tum, Vietnam. The model follows observations and discussions and some follow up work by partners of the NIFAM (Nutrition Intervention Forecasting and Monitoring) project in 2022 and 2023. A test run of the intervention will be carried out by the Social Policy Ecology research Institute (SPERI) in Kon Tum with smallholder farmers of the Ca Dong ethnic minority group.
+Here we model an intervention to address malnutrition among ethnic minority groups in Kon Tum, Vietnam. The model follows observations and discussions and some follow up work by partners of the NIFAM (Nutrition Intervention Forecasting and Monitoring) project in 2022 and 2023. The model focuses on the traditional diets of the Ca Dong people of Kon Tum, Vietnam. 
+
+The food environments of the Ca Dong people have changed dramatically since they were resettled from ancestral lands for the construction of the Dak Drinh hydropower reservoir in 2013. Food environments have shifted from traditional hunting, wild harvesting, and swidden agriculture, to low-income commodity production, leading to a decline in forests and the loss of traditional food plants and animals. Through transdisciplinary approaches, we engaged eight groups of stakeholders including local party leaders and forest-dependent communities to explore options for supporting diverse and sustainable food environments. 
+We applied participatory exploration of forest food availability and diversity. We model the potential of reforested areas to restore traditional food environment practices.
+
+We assess policy-level land-use planning to understand the transitions from forests to farmlands and their implications for food environments and forest ecology. 
+
+![](figures/kuznet.png)
+
+**Environmental Kuznets Curve and Food Environments**
+
+The model follows an environmental Kuznets curve - conversion of diverse forests to monoculture commodity production has resulted in a loss of ecological resources as well as traditional ecological knowledge and customarily governed forest harvests, affecting food choices and livelihoods - the future of these complex forest systems is unclear. The intertwined issues of forests, food environments, poverty, cultural preservation, and sustainable resource protection highlight the complex challenges faced by indigenous communities undergoing resettlement and changes in their food systems. 
+
+Together we set out to identify and model possible solutions, including agroforestry interventions in productive zones. Homegarden agroforestry options could be practicable. These gardens could include plants and animal diversity and lead to better nutrition for households and communities. They could also preserve the traditional diets and customs of people who have been displaced or no tlonger have access to the forest. 
+
+![](figures/garden_model.png)
+**Homegarden agroforestry options as an intervention to improve food environments in Kon Tum, Vietnam**
+
+Our work aims to contribute to the understanding of these challenges and develop evidence-based solutions that balance economic development with ecological and cultural sustainability. By collaborating with local stakeholders and incorporating local ecological knowledge. We aim to support interventions for sustainable diets, biodiversity conservation, and livelihood security in the changing landscapes of Vietnam's highlands. 
+
+We identified and described forest foods in community meetings, through observations and forest walks. The iNaturalist app was also used locally and taught to local people so that they could add to the list of edible forest species. 
+
+A test run of the intervention was meant to be carried out by the Social Policy Ecology research Institute (SPERI) in Kon Tum with smallholder farmers of the Ca Dong ethnic minority group. The next phase of the work would have been to test selected species for nutrition and field sites for the potential of growing in homegardens. However, there was a local uprising of indigenous people nit far from our project location. Several people were shot and killed including local political leaders and local ethnic minority people. We were unable to continue our work and instead report on what we learned in this short communication. 
 
 ![](figures/outline.png)
+**Conceptual model of homegardens and cooking classes as an intervention to improve food environments in Kon Tum, Vietnam**
 
+However, to be a realistic alternative, these interventions need to provide equivalent income to cassava planting (roughly 20 million VND per ha/yr).
 
 # Kon Tum garden and cooking class simulation
 
