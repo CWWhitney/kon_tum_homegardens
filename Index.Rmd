@@ -5,6 +5,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 ```
 
 Here we model an intervention to address malnutrition among ethnic minority groups in Kon Tum, Vietnam. The model follows observations and discussions and some follow up work by partners of the NIFAM (Nutrition Intervention Forecasting and Monitoring) project in 2022 and 2023. The model focuses on the traditional diets of the Ca Dong people of Kon Tum, Vietnam. 
@@ -34,8 +35,6 @@ A test run of the intervention was meant to be carried out by the Social Policy 
 ![](figures/outline.png)
 **Conceptual model of homegardens and cooking classes as an intervention to improve food environments in Kon Tum, Vietnam**
 
-However, to be a realistic alternative, these interventions need to provide equivalent income to cassava planting (roughly 20 million VND per ha/yr).
-
 # Kon Tum garden and cooking class simulation
 
 We use the `mcSimulation` function to perform a Monte Carlo simulations to estimate model outputs based on provided parameters and a model function. The Monte Carlo simulation generates a set of estimated model outputs based on random input samples, providing a distribution of potential outcomes.
@@ -58,7 +57,7 @@ garden_simulation_results <- mcSimulation(
 )
 ```
 
-The way we present NPV values can influence decision makers. The same information presented in different ways can even lead to different decisions. Here we derive a plot that compares the decision options as pure NPV values.
+Here we present the value for the interventions as a Net Present Value (NPV). However, to be a realistic alternative, these interventions need to provide equivalent income to cassava planting (roughly 20 million VND per ha/yr). We have added a line to the plot to represent this cut off. 
 
 ```{r}
 source("functions/plot_distributions.R")
@@ -66,21 +65,21 @@ plot_distributions(mcSimulation_object = garden_simulation_results,
                                     vars = c("NPV_garden", "NPV_no_garden"),
                                     method = 'hist_simple_overlay', 
                                     base_size = 7, 
-                                    x_axis_name = "Comparative NPV outcomes")
+                                    x_axis_name = "Comparative NPV outcomes") + geom_vline(xintercept = 90)
 ```
+
+
 
 ## Framing the outcomes
 
-Under Prospect Theory the way we present NPV values can influence decision makers - the same information presented in different ways can lead to different decisions. For example, framing a projected NPV gain as a "reduction in potential loss" might make it more attractive to decision makers due to loss aversion.
-
-Here we plot the distribution for the decision and frame the projected NPV gain for the 'decision' (distributions for the two options with the NPV values of the `no garden` option subtracted from those for the `garden`). If we display this as a "Reduction in potential loss" it might be more attractive to decision makers due to loss aversion, i.e. the party might put more emphasis on avoiding potential losses than on seeking gains. We can frame our results as a strategy that minimizes losses rather than one that maximizes gains.
+We plot the distribution for the decision and frame the projected NPV gain for the 'decision' (distributions for the two options with the NPV values of the `no garden` option subtracted from those for the `garden`). 
 
 ```{r framing_NPV_results}
 plot_distributions(mcSimulation_object = garden_simulation_results, 
                                     vars = "decision",
                                     method = 'hist_simple_overlay', 
                                     base_size = 7,  
-                                    x_axis_name = "Reduction in potential loss")
+                                    x_axis_name = "Relative gain compared to no garden") + geom_vline(xintercept = 90)
 
 ```
 
@@ -112,7 +111,7 @@ Summary of costs
 summary(garden_simulation_results$y$total_costs)
 ```
 
-# First year
+# Summary of the first year of investment
 
 ```{r summary_first_year_costs}
 summary(garden_simulation_results$y$Cashflow_garden1)
