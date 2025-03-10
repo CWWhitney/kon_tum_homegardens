@@ -11,4 +11,11 @@ Model of an intervention of a homegarden and cooking classes
 <img width="1083" alt="garden_cooking_model" src="https://github.com/CWWhitney/kon_tum_homegardens/assets/19190662/0a3f0d94-d3e9-48a9-bcf0-0650ed216975">
 
 
+Field notes
 
+https://docs.google.com/document/d/1v5rmcp_NBEZpmLK-pjgCVQCIlNp2mSbTG6uUhhDg-k8/edit?tab=t.0
+
+
+Zotero library 
+
+https://www.zotero.org/groups/5070115/nifam
