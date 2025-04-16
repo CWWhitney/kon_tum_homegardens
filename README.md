@@ -1,5 +1,7 @@
 Homegardens in Kon Tum, Vietnam
 
+![Uploading image.png…]()
+
 Proposed models of homegarden interventions in Kon Tum Vietnam, based on preliminary investigations and observations
 
 Model of the intervention of a homegarden
